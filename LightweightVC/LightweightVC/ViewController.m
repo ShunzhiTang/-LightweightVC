@@ -4,11 +4,12 @@
 //
 //  Created by tang on 16/3/11.
 //  Copyright © 2016年 shunzhitang. All rights reserved.
-//
 
 #import "ViewController.h"
-
+#import "TSZReaderFileInStream.h"
 @interface ViewController ()
+
+
 
 @end
 
@@ -16,8 +17,28 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+
+    
 }
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    
+    
+   
+    
+     NSURL *fileURL = [[NSURL alloc] initFileURLWithPath:@"/Users/tang/Desktop/tsz.txt"];
+    
+     TSZReaderFileInStream  *reader = [[TSZReaderFileInStream alloc] initWithFileAtPath: fileURL];
+    
+    [reader enumerateLines:^(NSUInteger lineNumber, NSString *line) {
+        
+        NSLog(@"lineNumber =  %zd  ,   line  =%@" , lineNumber , line);
+    } completion:^{
+        
+        NSLog(@"completion");
+    }];
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

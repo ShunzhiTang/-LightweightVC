@@ -13,6 +13,11 @@
 		24D152161C927EDA008B746F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24D152141C927EDA008B746F /* Main.storyboard */; };
 		24D152181C927EDA008B746F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24D152171C927EDA008B746F /* Assets.xcassets */; };
 		24D1521B1C927EDA008B746F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24D152191C927EDA008B746F /* LaunchScreen.storyboard */; };
+		24D152261C929D19008B746F /* TSZArrayDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 24D152251C929D19008B746F /* TSZArrayDataSource.m */; };
+		24D1522A1C92A737008B746F /* TSZPhotosTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24D152281C92A737008B746F /* TSZPhotosTableViewController.m */; };
+		24D1522B1C92A737008B746F /* TSZPhotosTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24D152291C92A737008B746F /* TSZPhotosTableViewController.xib */; };
+		24D1522F1C92F440008B746F /* TSZReaderFileInStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 24D1522E1C92F440008B746F /* TSZReaderFileInStream.m */; };
+		24D152321C92FB5D008B746F /* NSData+EnumerateComponents.m in Sources */ = {isa = PBXBuildFile; fileRef = 24D152311C92FB5D008B746F /* NSData+EnumerateComponents.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +31,15 @@
 		24D152171C927EDA008B746F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		24D1521A1C927EDA008B746F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		24D1521C1C927EDA008B746F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		24D152241C929D19008B746F /* TSZArrayDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSZArrayDataSource.h; sourceTree = "<group>"; };
+		24D152251C929D19008B746F /* TSZArrayDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSZArrayDataSource.m; sourceTree = "<group>"; };
+		24D152271C92A737008B746F /* TSZPhotosTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSZPhotosTableViewController.h; sourceTree = "<group>"; };
+		24D152281C92A737008B746F /* TSZPhotosTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSZPhotosTableViewController.m; sourceTree = "<group>"; };
+		24D152291C92A737008B746F /* TSZPhotosTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TSZPhotosTableViewController.xib; sourceTree = "<group>"; };
+		24D1522D1C92F440008B746F /* TSZReaderFileInStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSZReaderFileInStream.h; sourceTree = "<group>"; };
+		24D1522E1C92F440008B746F /* TSZReaderFileInStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSZReaderFileInStream.m; sourceTree = "<group>"; };
+		24D152301C92FB5D008B746F /* NSData+EnumerateComponents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+EnumerateComponents.h"; sourceTree = "<group>"; };
+		24D152311C92FB5D008B746F /* NSData+EnumerateComponents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+EnumerateComponents.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +72,15 @@
 		24D1520A1C927EDA008B746F /* LightweightVC */ = {
 			isa = PBXGroup;
 			children = (
+				24D152301C92FB5D008B746F /* NSData+EnumerateComponents.h */,
+				24D152311C92FB5D008B746F /* NSData+EnumerateComponents.m */,
+				24D1522D1C92F440008B746F /* TSZReaderFileInStream.h */,
+				24D1522E1C92F440008B746F /* TSZReaderFileInStream.m */,
+				24D152241C929D19008B746F /* TSZArrayDataSource.h */,
+				24D152251C929D19008B746F /* TSZArrayDataSource.m */,
+				24D152271C92A737008B746F /* TSZPhotosTableViewController.h */,
+				24D152281C92A737008B746F /* TSZPhotosTableViewController.m */,
+				24D152291C92A737008B746F /* TSZPhotosTableViewController.xib */,
 				24D1520E1C927EDA008B746F /* AppDelegate.h */,
 				24D1520F1C927EDA008B746F /* AppDelegate.m */,
 				24D152111C927EDA008B746F /* ViewController.h */,
@@ -136,6 +159,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24D1522B1C92A737008B746F /* TSZPhotosTableViewController.xib in Resources */,
 				24D1521B1C927EDA008B746F /* LaunchScreen.storyboard in Resources */,
 				24D152181C927EDA008B746F /* Assets.xcassets in Resources */,
 				24D152161C927EDA008B746F /* Main.storyboard in Resources */,
@@ -149,9 +173,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24D1522F1C92F440008B746F /* TSZReaderFileInStream.m in Sources */,
 				24D152131C927EDA008B746F /* ViewController.m in Sources */,
 				24D152101C927EDA008B746F /* AppDelegate.m in Sources */,
+				24D152321C92FB5D008B746F /* NSData+EnumerateComponents.m in Sources */,
+				24D152261C929D19008B746F /* TSZArrayDataSource.m in Sources */,
 				24D1520D1C927EDA008B746F /* main.m in Sources */,
+				24D1522A1C92A737008B746F /* TSZPhotosTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,6 +328,7 @@
 				24D152211C927EDA008B746F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
