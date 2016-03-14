@@ -12,6 +12,7 @@
 
 - (void)obj_enumerateComponentsSeparatedBy:(NSData*)delimiter usingBlock:(void (^)(NSData*, BOOL finalBlock) )block
 {
+    
     NSUInteger loc = 0;
     while (YES) {
         NSRange rangeOfNewline = [self rangeOfData:delimiter options:0 range:NSMakeRange(loc, self.length - loc)];

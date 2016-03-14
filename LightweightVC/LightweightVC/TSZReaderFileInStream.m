@@ -33,7 +33,7 @@
 
 @implementation TSZReaderFileInStream
 
-- (void)enumerateLines:(void (^)(  NSUInteger lineNumber,NSString * line)) block completion:(void (^)())completion{
+- (void)enumerateLines:(void (^)(  NSUInteger lineNumber,NSString * line)) block completion:(void (^)(NSUInteger lineNumbers))completion{
     
     
     if (self.queue == nil) {
@@ -50,15 +50,14 @@
     self.inputStream = [NSInputStream   inputStreamWithURL:self.fileUrl];
     
     self.inputStream.delegate = self;
-    
-    
+        
     [self.inputStream  scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
     
     [self.inputStream open];
 }
 
 
-- (instancetype)initWithFileAtPath:(NSURL *)pathUrl{
+- (id)initWithFileAtPath:(NSURL *)pathUrl{
     
     if (![pathUrl isFileURL]) {
         return nil;
@@ -70,7 +69,9 @@
         
         self.fileUrl =  pathUrl;
         
-        self.delimiter  = [@"\n" dataUsingEncoding:NSUTF8StringEncoding];
+        NSData *data = [self.inputStream propertyForKey:NSStreamDataWrittenToMemoryStreamKey];
+        NSString *string = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        self.delimiter  = [string dataUsingEncoding:NSUTF8StringEncoding];
     }
     
     
@@ -82,6 +83,8 @@
 
 - (void)stream:(NSStream *)aStream handleEvent:(NSStreamEvent)eventCode{
     
+    NSLog(@"-----");
+    
     switch (eventCode) {
         case NSStreamEventOpenCompleted:
             
@@ -92,16 +95,23 @@
             [self emitLineWithData:self.remaider];
             
             self.remaider = nil;
-            [self.inputStream close];
-            self.inputStream = nil;
+            
+            [aStream close];
+            
+            [aStream removeFromRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+            
+            aStream = nil;
+            
             [self.queue addOperationWithBlock:^{
                 self.completion(self.lineNumber + 1);
             }];
+            
+             break;
         }
             
-            break;
             
             case NSStreamEventErrorOccurred:
+            
             NSLog(@"error");
             
             break;
@@ -118,7 +128,9 @@
                 __weak id weakSelf = self;
                 
                 [self.queue addOperationWithBlock:^{
+                    
                     [weakSelf processDataChunk:buffer];
+                    
                 }];
                 
             }

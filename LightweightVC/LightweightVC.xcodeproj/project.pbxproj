@@ -18,6 +18,7 @@
 		24D1522B1C92A737008B746F /* TSZPhotosTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24D152291C92A737008B746F /* TSZPhotosTableViewController.xib */; };
 		24D1522F1C92F440008B746F /* TSZReaderFileInStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 24D1522E1C92F440008B746F /* TSZReaderFileInStream.m */; };
 		24D152321C92FB5D008B746F /* NSData+EnumerateComponents.m in Sources */ = {isa = PBXBuildFile; fileRef = 24D152311C92FB5D008B746F /* NSData+EnumerateComponents.m */; };
+		24D152341C9307BE008B746F /* tsz.txt in Resources */ = {isa = PBXBuildFile; fileRef = 24D152331C9307BE008B746F /* tsz.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		24D1522E1C92F440008B746F /* TSZReaderFileInStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSZReaderFileInStream.m; sourceTree = "<group>"; };
 		24D152301C92FB5D008B746F /* NSData+EnumerateComponents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+EnumerateComponents.h"; sourceTree = "<group>"; };
 		24D152311C92FB5D008B746F /* NSData+EnumerateComponents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+EnumerateComponents.m"; sourceTree = "<group>"; };
+		24D152331C9307BE008B746F /* tsz.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = tsz.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 		24D1520B1C927EDA008B746F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				24D152331C9307BE008B746F /* tsz.txt */,
 				24D1520C1C927EDA008B746F /* main.m */,
 			);
 			name = "Supporting Files";
@@ -160,6 +163,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				24D1522B1C92A737008B746F /* TSZPhotosTableViewController.xib in Resources */,
+				24D152341C9307BE008B746F /* tsz.txt in Resources */,
 				24D1521B1C927EDA008B746F /* LaunchScreen.storyboard in Resources */,
 				24D152181C927EDA008B746F /* Assets.xcassets in Resources */,
 				24D152161C927EDA008B746F /* Main.storyboard in Resources */,

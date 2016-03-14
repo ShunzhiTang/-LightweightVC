@@ -24,19 +24,28 @@
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     
     
-   
+//    NSString *pathUrl = [[NSBundle mainBundle] pathForResource:@"tsz.txt" ofType:nil];
+//    
+//    NSURL *fileURL = [[NSURL alloc] initFileURLWithPath:pathUrl];
+//    
+//    TSZReaderFileInStream  *reader = [[TSZReaderFileInStream alloc] initWithFileAtPath: fileURL];
+//    
+//    [reader enumerateLines:^(NSUInteger lineNumber, NSString *line) {
+//        
+//        NSLog(@"lineNumber =  %zd  ,   line  =%@" , lineNumber , line);
+//    } completion:^(NSUInteger lineNumbers) {
+//        NSLog(@"%zd" , lineNumbers);
+//    }];
     
-     NSURL *fileURL = [[NSURL alloc] initFileURLWithPath:@"/Users/tang/Desktop/tsz.txt"];
-    
-     TSZReaderFileInStream  *reader = [[TSZReaderFileInStream alloc] initWithFileAtPath: fileURL];
-    
-    [reader enumerateLines:^(NSUInteger lineNumber, NSString *line) {
+    dispatch_apply(3, dispatch_get_global_queue(0, 0), ^(size_t  y) {
         
-        NSLog(@"lineNumber =  %zd  ,   line  =%@" , lineNumber , line);
-    } completion:^{
+        for (size_t  x = 0 ;  x< 3; x++ ) {
+            
+            NSLog(@"次数 ： %zd" , x);
+        }
         
-        NSLog(@"completion");
-    }];
+    });
+    
 }
 
 

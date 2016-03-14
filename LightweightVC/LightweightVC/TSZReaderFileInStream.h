@@ -12,10 +12,10 @@
 
 @interface TSZReaderFileInStream : NSObject
 
-- (void)enumerateLines:(void (^)(  NSUInteger lineNumber,NSString * line)) block completion:(void (^)())completion;
+- (void)enumerateLines:(void (^)(  NSUInteger lineNumber,NSString * line)) block completion:(void (^)(NSUInteger lineNumbers))completion;
 
 
-- (instancetype)initWithFileAtPath:(NSURL *)pathUrl;
+- (id)initWithFileAtPath:(NSURL *)pathUrl;
 
 
 
